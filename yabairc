@@ -29,6 +29,7 @@ yabai -m rule --add app='System Settings' manage=off sticky=on
 yabai -m rule --add app='iPhone Mirroring' manage=off
 yabai -m rule --add app='Throne' manage=off
 yabai -m rule --add app='V2BOX' manage=off
+yabai -m rule --add app='Happ' manage=off
 yabai -m rule --add app='DBeaver' title="(Connection (changed|test|error|.*configuration)|(Connect to a|Can't connect to) database)" manage=off
 yabai -m rule --add app='DBeaver' title="Connect to '.*'"   manage=off
 yabai -m rule --add app='DBeaver' title='(Rename|Edit).*'   manage=off
