@@ -44,8 +44,7 @@ cmd + shift - return : osascript $HOME/.config/skhd/newItermWindow.osa || /Appli
 cmd + shift - e : open ~
 cmd + shift - z : /Applications/Chatzone.app/Contents/MacOS/Chatzone
 
-cmd + shift - b : osascript -e 'tell application "Google Chrome" to reopen' \
-                            -e 'tell application "Google Chrome" to activate'
+cmd + shift - b : osascript -e 'tell application "Google Chrome" to reopen' -e 'tell application "Google Chrome" to activate'
 cmd + shift - c : osascript -e 'tell application "Calculator" to activate'
 cmd + shift - t : osascript -e 'tell application "Telegram" to activate'
 cmd + shift - m : osascript -e 'tell application "Spotify" to reopen'
