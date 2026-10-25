@@ -1,0 +1,70 @@
+# запуск бинарки которая добавляет подстветку границ выделенного окна (нужно ставить её отдельно)
+pkill -9 borders
+borders active_color=0xff88deff width=6 &
+# запуск апдейтера yabai-spaces-widge
+/Applications/Yabai\ Spaces\ Widget.app/Contents/MacOS/ysw &
+
+# sudo yabai --load-sa
+
+# Конфиг yabai
+yabai -m config layout bsp
+
+yabai -m config mouse_modifier alt
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    8
+yabai -m config bottom_padding 8
+yabai -m config left_padding   8
+yabai -m config right_padding  8
+yabai -m config window_gap     8
+
+yabai -m config auto_balance on
+
+yabai -m config window_origin_display focused
+yabai -m config window_insertion_point focused
+
+yabai -m config mouse_follows_focus off
+
+yabai -m rule --add app='System Settings' manage=off sticky=on
+yabai -m rule --add app='iPhone Mirroring' manage=off
+yabai -m rule --add app='Throne' manage=off
+yabai -m rule --add app='V2BOX' manage=off
+yabai -m rule --add app='Happ' manage=off
+yabai -m rule --add app='DBeaver' title="(Connection (changed|test|error|.*configuration)|(Connect to a|Can't connect to) database)" manage=off
+yabai -m rule --add app='DBeaver' title="Connect to '.*'"   manage=off
+yabai -m rule --add app='DBeaver' title='(Rename|Edit).*'   manage=off
+yabai -m rule --add app='DBeaver' title='Folder name'       manage=off
+yabai -m rule --add app='DBeaver' title='Properties for .*' manage=off
+yabai -m rule --add app='DBeaver' title='Select a wizard'   manage=off
+yabai -m rule --add app='DBeaver' title='Version update'    manage=off
+yabai -m rule --add app='DBeaver' title='Preferences'       manage=off
+yabai -m rule --add app='DBeaver' title='Refresh'           manage=off
+yabai -m rule --add app='DBeaver' title='Choose.*'          manage=off
+yabai -m rule --add app='DBeaver' title='Cannot obtain session' manage=off
+
+yabai -m rule --add app='TickTick' title='Settings' manage=off
+
+yabai -m rule --add app='QuickTime Player' manage=off
+yabai -m rule --add app='Finder' manage=off
+yabai -m rule --add app='Stickies' manage=off
+
+
+yabai -m rule --add app='Netzone' grid=1:3:0:1:1:1
+
+
+signals=(
+   "space_changed"
+   "display_added"
+   "display_removed"
+   "display_moved"
+   "display_changed"
+   "mission_control_enter"
+   "mission_control_exit"
+)
+for signal in "${signals[@]}"
+do
+   yabai --message signal \
+         --add \
+            event=$signal \
+            action="osascript -e 'tell application \"Yabai Spaces Widget\" to refresh'"
+done
