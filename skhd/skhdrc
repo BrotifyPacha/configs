@@ -1,0 +1,51 @@
+alt - h : yabai -m window --focus west  || yabai -m display --focus west  
+alt - j : yabai -m window --focus south || yabai -m display --focus south 
+alt - k : yabai -m window --focus north || yabai -m display --focus north 
+alt - l : yabai -m window --focus east  || yabai -m display --focus east  
+
+alt + shift - h : yabai -m window --swap west  || (yabai -m window --display west  && yabai -m display --focus west)
+alt + shift - j : yabai -m window --swap south || (yabai -m window --display south && yabai -m display --focus south)
+alt + shift - k : yabai -m window --swap north || (yabai -m window --display north && yabai -m display --focus north)
+alt + shift - l : yabai -m window --swap east  || (yabai -m window --display east  && yabai -m display --focus east)
+
+alt - 0x2F : osascript -e 'tell application "System Events" to key code 47 using {option down, command down}'
+alt - 0x2B : osascript -e 'tell application "System Events" to key code 43 using {option down, command down}' 
+
+alt - p : yabai -m window --focus recent
+
+alt - f : for wid in $(yabai -m query --windows | jq '.[] | select(."is-floating"==true) | ."id"') ; do yabai -m window --focus "$wid"; done
+alt + shift - f : yabai -m window --toggle float
+
+# alt - [
+alt - 0x21 : yabai -m window --ratio rel:-0.05
+# alt - ]
+alt - 0x1E : yabai -m window --ratio rel:+0.05
+alt - e : yabai -m space --equalize
+alt + shift - e : yabai -m space --balance
+# alt - o : skhd -k "ctrl + cmd - f"
+
+alt - o :         yabai -m window --toggle zoom-fullscreen
+alt + shift - o : yabai -m window --toggle native-fullscreen
+
+alt - c : yabai -m window --close
+alt + shift - c : skhd -k "cmd - q"
+
+cmd + shift - h : yabai -m window --insert west
+cmd + shift - j : yabai -m window --insert south
+cmd + shift - k : yabai -m window --insert north
+cmd + shift - l : yabai -m window --insert east
+
+cmd + shift - w : yabai -m window --warp west
+
+alt + cmd + shift - r : yabai --restart-service
+
+cmd + shift - return : osascript $HOME/.config/skhd/newTermWindow.osa
+
+cmd + shift - e : open ~
+cmd + shift - z : /Applications/Chatzone.app/Contents/MacOS/Chatzone
+
+cmd + shift - b : osascript -e 'tell application "Google Chrome" to reopen' -e 'tell application "Google Chrome" to activate'
+cmd + shift - c : osascript -e 'tell application "Calculator" to activate'
+cmd + shift - t : osascript -e 'tell application "Telegram" to activate'
+cmd + shift - m : osascript -e 'tell application "Spotify" to reopen'
+cmd + shift - d : osascript -e 'tell application "DBeaver" to activate'
