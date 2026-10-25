@@ -6,6 +6,8 @@ git submodule update --init
 ln -snf "$PWD/zsh" "$HOME/.config/zsh"
 ln -snf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
 
+ln -snf "$PWD/git" "$HOME/.config/git"
+
 ln -snf "$PWD/yabai" "$HOME/.config/yabai"
 ln -snf "$PWD/skhd" "$HOME/.config/skhd"
 
