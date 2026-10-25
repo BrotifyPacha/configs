@@ -39,7 +39,7 @@ cmd + shift - w : yabai -m window --warp west
 
 alt + cmd + shift - r : yabai --restart-service
 
-cmd + shift - return : osascript $HOME/.config/skhd/newItermWindow.osa || /Applications/iTerm.app/Contents/MacOS/iTerm2
+cmd + shift - return : osascript $HOME/.config/skhd/newTermWindow.osa
 
 cmd + shift - e : open ~
 cmd + shift - z : /Applications/Chatzone.app/Contents/MacOS/Chatzone
