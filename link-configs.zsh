@@ -11,3 +11,5 @@ ln -snf "$PWD/skhd" "$HOME/.config/skhd"
 
 # Not synced for now as i switched to ghostty
 # ln -snf "$PWD/iterm2" "$HOME/.config/iterm2"
+
+ln -snf "$PWD/ghostty" "$HOME/.config/ghostty"
