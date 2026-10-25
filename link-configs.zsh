@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # init zsh-autosuggestions module
-git submodule init
+git submodule update --init
 
 ln -snf "$PWD/zsh" "$HOME/.config/zsh"
 ln -snf "$PWD/zsh/.zshrc" "$HOME/.zshrc"
